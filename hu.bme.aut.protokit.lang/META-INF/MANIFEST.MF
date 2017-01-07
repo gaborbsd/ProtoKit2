@@ -1,0 +1,31 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: hu.bme.aut.protokit.lang
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: hu.bme.aut.protokit.lang; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: hu.bme.aut.oogen.meta,
+ hu.bme.aut.oogen.general,
+ hu.bme.aut.oogen.java,
+ hu.bme.aut.oogen.cpp,
+ hu.bme.aut.protokit.meta,
+ hu.bme.aut.protokit.m2m.oogen,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: hu.bme.aut.protokit.services,
+ hu.bme.aut.protokit.parser.antlr.internal,
+ hu.bme.aut.protokit.parser.antlr,
+ hu.bme.aut.protokit.validation,
+ hu.bme.aut.protokit.formatting,
+ hu.bme.aut.protokit.serializer,
+ hu.bme.aut.protokit.scoping,
+ hu.bme.aut.protokit.generator,
+ hu.bme.aut.protokit
+Import-Package: org.apache.log4j

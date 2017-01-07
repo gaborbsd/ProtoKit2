@@ -1,0 +1,36 @@
+datatype DNSMessage {
+  *transactionID : int(2)
+  *flags : bitfield {
+    response : 1
+    opCode : 4
+    authoritative : 1
+    truncation : 1
+    needRecursion : 1
+    recursionAvail : 1
+    reserved : 3
+    returnCode : 4
+  }
+  questionRRCount : count(2, queries)
+  answerRRCount : count(2, answers)
+  authorityRRCount : count(2, authorities)
+  additionalRRCount : count(2, additionals)
+  *queries : list(DNSQueryEntry)
+  *answers : list(DNSResourceRecord)
+  *authorities : list(DNSResourceRecord)
+  *additionals : list(DNSResourceRecord)
+}
+
+datatype DNSQueryEntry {
+  *name : string(*) formatter DomainNameFormatter
+  *type : int(2)
+  *resourceClass : int(2)
+}
+
+datatype DNSResourceRecord   {
+  *query : DNSQueryEntry
+  *ttl: int(4)
+  *len : length(2, data)
+  *data: binary(*)
+  transient created : int(8)
+}
+

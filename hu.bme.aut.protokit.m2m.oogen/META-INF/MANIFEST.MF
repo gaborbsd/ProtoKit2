@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: protokit.m2m.oogen
+Bundle-SymbolicName: hu.bme.aut.protokit.m2m.oogen
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Gábor Kövesdán
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: hu.bme.aut.oogen.meta,
+ hu.bme.aut.protokit.meta
+Export-Package: hu.bme.aut.protokit.m2m.oogen

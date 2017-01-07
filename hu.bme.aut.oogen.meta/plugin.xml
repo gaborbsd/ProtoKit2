@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated oogen2 -->
+      <package
+            uri="https://oogen.aut.bme.hu"
+            class="hu.bme.aut.oogen.OogenPackage"
+            genModel="model/oogen.genmodel"/>
+   </extension>
+
+</plugin>
