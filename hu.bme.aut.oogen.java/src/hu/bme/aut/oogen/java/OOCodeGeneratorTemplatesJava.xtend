@@ -63,7 +63,7 @@ package «cl.package.name»;
 import java.nio.ByteBuffer;
 import java.util.*;
 
-import hu.bme.aut.protokit.util.ProtoUtil;
+import hu.bme.aut.protokit.runtime.ProtoUtil;
 	
 public class «cl.name» {
 	«FOR m : cl.members.filter[m|m.languages.empty || m.languages.contains(OOLanguage.JAVA)]»
