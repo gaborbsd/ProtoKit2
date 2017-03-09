@@ -562,13 +562,31 @@ public interface OogenPackage extends EPackage {
 	int OO_MODEL__PACKAGES = 1;
 
 	/**
+	 * The feature id for the '<em><b>Global Variables</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OO_MODEL__GLOBAL_VARIABLES = 2;
+
+	/**
+	 * The feature id for the '<em><b>Global Functions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OO_MODEL__GLOBAL_FUNCTIONS = 3;
+
+	/**
 	 * The number of structural features of the '<em>OO Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OO_MODEL_FEATURE_COUNT = 2;
+	int OO_MODEL_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>OO Model</em>' class.
@@ -2879,6 +2897,28 @@ public interface OogenPackage extends EPackage {
 	EReference getOOModel_Packages();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link hu.bme.aut.oogen.OOModel#getGlobalVariables <em>Global Variables</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Global Variables</em>'.
+	 * @see hu.bme.aut.oogen.OOModel#getGlobalVariables()
+	 * @see #getOOModel()
+	 * @generated
+	 */
+	EReference getOOModel_GlobalVariables();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link hu.bme.aut.oogen.OOModel#getGlobalFunctions <em>Global Functions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Global Functions</em>'.
+	 * @see hu.bme.aut.oogen.OOModel#getGlobalFunctions()
+	 * @see #getOOModel()
+	 * @generated
+	 */
+	EReference getOOModel_GlobalFunctions();
+
+	/**
 	 * Returns the meta object for class '{@link hu.bme.aut.oogen.OOStatement <em>OO Statement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4058,6 +4098,22 @@ public interface OogenPackage extends EPackage {
 		 * @generated
 		 */
 		EReference OO_MODEL__PACKAGES = eINSTANCE.getOOModel_Packages();
+
+		/**
+		 * The meta object literal for the '<em><b>Global Variables</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OO_MODEL__GLOBAL_VARIABLES = eINSTANCE.getOOModel_GlobalVariables();
+
+		/**
+		 * The meta object literal for the '<em><b>Global Functions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OO_MODEL__GLOBAL_FUNCTIONS = eINSTANCE.getOOModel_GlobalFunctions();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.aut.oogen.OOStatementImpl <em>OO Statement</em>}' class.

@@ -790,6 +790,24 @@ public class OogenPackageImpl extends EPackageImpl implements OogenPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getOOModel_GlobalVariables() {
+		return (EReference)ooModelEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOOModel_GlobalFunctions() {
+		return (EReference)ooModelEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getOOStatement() {
 		return ooStatementEClass;
 	}
@@ -1601,6 +1619,8 @@ public class OogenPackageImpl extends EPackageImpl implements OogenPackage {
 		ooModelEClass = createEClass(OO_MODEL);
 		createEReference(ooModelEClass, OO_MODEL__OOPACKAGE);
 		createEReference(ooModelEClass, OO_MODEL__PACKAGES);
+		createEReference(ooModelEClass, OO_MODEL__GLOBAL_VARIABLES);
+		createEReference(ooModelEClass, OO_MODEL__GLOBAL_FUNCTIONS);
 
 		ooStatementEClass = createEClass(OO_STATEMENT);
 
@@ -1850,6 +1870,8 @@ public class OogenPackageImpl extends EPackageImpl implements OogenPackage {
 		initEClass(ooModelEClass, OOModel.class, "OOModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOOModel_Oopackage(), this.getOOPackage(), null, "oopackage", null, 0, 1, OOModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOOModel_Packages(), this.getOOPackage(), null, "packages", null, 0, -1, OOModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOOModel_GlobalVariables(), this.getOOVariable(), null, "globalVariables", null, 0, -1, OOModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOOModel_GlobalFunctions(), this.getOOMethod(), null, "globalFunctions", null, 0, -1, OOModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ooStatementEClass, OOStatement.class, "OOStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

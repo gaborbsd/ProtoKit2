@@ -17,6 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link hu.bme.aut.oogen.OOModel#getOopackage <em>Oopackage</em>}</li>
  *   <li>{@link hu.bme.aut.oogen.OOModel#getPackages <em>Packages</em>}</li>
+ *   <li>{@link hu.bme.aut.oogen.OOModel#getGlobalVariables <em>Global Variables</em>}</li>
+ *   <li>{@link hu.bme.aut.oogen.OOModel#getGlobalFunctions <em>Global Functions</em>}</li>
  * </ul>
  *
  * @see hu.bme.aut.oogen.OogenPackage#getOOModel()
@@ -65,5 +67,37 @@ public interface OOModel extends EObject {
 	 * @generated
 	 */
 	EList<OOPackage> getPackages();
+
+	/**
+	 * Returns the value of the '<em><b>Global Variables</b></em>' containment reference list.
+	 * The list contents are of type {@link hu.bme.aut.oogen.OOVariable}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Global Variables</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Global Variables</em>' containment reference list.
+	 * @see hu.bme.aut.oogen.OogenPackage#getOOModel_GlobalVariables()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<OOVariable> getGlobalVariables();
+
+	/**
+	 * Returns the value of the '<em><b>Global Functions</b></em>' containment reference list.
+	 * The list contents are of type {@link hu.bme.aut.oogen.OOMethod}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Global Functions</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Global Functions</em>' containment reference list.
+	 * @see hu.bme.aut.oogen.OogenPackage#getOOModel_GlobalFunctions()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<OOMethod> getGlobalFunctions();
 
 } // OOModel

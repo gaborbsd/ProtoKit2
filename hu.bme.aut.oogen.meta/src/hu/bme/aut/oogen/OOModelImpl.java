@@ -28,6 +28,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link hu.bme.aut.oogen.OOModelImpl#getOopackage <em>Oopackage</em>}</li>
  *   <li>{@link hu.bme.aut.oogen.OOModelImpl#getPackages <em>Packages</em>}</li>
+ *   <li>{@link hu.bme.aut.oogen.OOModelImpl#getGlobalVariables <em>Global Variables</em>}</li>
+ *   <li>{@link hu.bme.aut.oogen.OOModelImpl#getGlobalFunctions <em>Global Functions</em>}</li>
  * </ul>
  *
  * @generated
@@ -52,6 +54,26 @@ public class OOModelImpl extends MinimalEObjectImpl.Container implements OOModel
 	 * @ordered
 	 */
 	protected EList<OOPackage> packages;
+
+	/**
+	 * The cached value of the '{@link #getGlobalVariables() <em>Global Variables</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGlobalVariables()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<OOVariable> globalVariables;
+
+	/**
+	 * The cached value of the '{@link #getGlobalFunctions() <em>Global Functions</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGlobalFunctions()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<OOMethod> globalFunctions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -127,11 +149,39 @@ public class OOModelImpl extends MinimalEObjectImpl.Container implements OOModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<OOVariable> getGlobalVariables() {
+		if (globalVariables == null) {
+			globalVariables = new EObjectContainmentEList<OOVariable>(OOVariable.class, this, OogenPackage.OO_MODEL__GLOBAL_VARIABLES);
+		}
+		return globalVariables;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<OOMethod> getGlobalFunctions() {
+		if (globalFunctions == null) {
+			globalFunctions = new EObjectContainmentEList<OOMethod>(OOMethod.class, this, OogenPackage.OO_MODEL__GLOBAL_FUNCTIONS);
+		}
+		return globalFunctions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case OogenPackage.OO_MODEL__PACKAGES:
 				return ((InternalEList<?>)getPackages()).basicRemove(otherEnd, msgs);
+			case OogenPackage.OO_MODEL__GLOBAL_VARIABLES:
+				return ((InternalEList<?>)getGlobalVariables()).basicRemove(otherEnd, msgs);
+			case OogenPackage.OO_MODEL__GLOBAL_FUNCTIONS:
+				return ((InternalEList<?>)getGlobalFunctions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -149,6 +199,10 @@ public class OOModelImpl extends MinimalEObjectImpl.Container implements OOModel
 				return basicGetOopackage();
 			case OogenPackage.OO_MODEL__PACKAGES:
 				return getPackages();
+			case OogenPackage.OO_MODEL__GLOBAL_VARIABLES:
+				return getGlobalVariables();
+			case OogenPackage.OO_MODEL__GLOBAL_FUNCTIONS:
+				return getGlobalFunctions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -169,6 +223,14 @@ public class OOModelImpl extends MinimalEObjectImpl.Container implements OOModel
 				getPackages().clear();
 				getPackages().addAll((Collection<? extends OOPackage>)newValue);
 				return;
+			case OogenPackage.OO_MODEL__GLOBAL_VARIABLES:
+				getGlobalVariables().clear();
+				getGlobalVariables().addAll((Collection<? extends OOVariable>)newValue);
+				return;
+			case OogenPackage.OO_MODEL__GLOBAL_FUNCTIONS:
+				getGlobalFunctions().clear();
+				getGlobalFunctions().addAll((Collection<? extends OOMethod>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -187,6 +249,12 @@ public class OOModelImpl extends MinimalEObjectImpl.Container implements OOModel
 			case OogenPackage.OO_MODEL__PACKAGES:
 				getPackages().clear();
 				return;
+			case OogenPackage.OO_MODEL__GLOBAL_VARIABLES:
+				getGlobalVariables().clear();
+				return;
+			case OogenPackage.OO_MODEL__GLOBAL_FUNCTIONS:
+				getGlobalFunctions().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -203,6 +271,10 @@ public class OOModelImpl extends MinimalEObjectImpl.Container implements OOModel
 				return oopackage != null;
 			case OogenPackage.OO_MODEL__PACKAGES:
 				return packages != null && !packages.isEmpty();
+			case OogenPackage.OO_MODEL__GLOBAL_VARIABLES:
+				return globalVariables != null && !globalVariables.isEmpty();
+			case OogenPackage.OO_MODEL__GLOBAL_FUNCTIONS:
+				return globalFunctions != null && !globalFunctions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

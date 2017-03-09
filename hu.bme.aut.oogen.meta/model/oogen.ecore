@@ -84,6 +84,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="oopackage" eType="#//OOPackage"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="packages" upperBound="-1"
         eType="#//OOPackage" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="globalVariables" upperBound="-1"
+        eType="#//OOVariable" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="globalFunctions" upperBound="-1"
+        eType="#//OOMethod" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="OOCollectionType">
     <eLiterals name="NONE"/>
