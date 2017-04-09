@@ -58,11 +58,28 @@ class OOCodeGeneratorTemplatesCpp implements OOCodeGeneratorTemplates {
 	}
 	
 	override String generate(OOClass cl) '''	
+«IF !cl.isNestedClass()» 
 namespace «cl.package.name»;
-
 #include <cmath>
+	«ENDIF»
+	
+	«IF !cl.ooclass.isEmpty» 
+	
+namespace N_«cl.name»  {
+	«FOR c : cl.ooclass»
+	
+	«generate(c)»
+	
+	«ENDFOR»
+	
+	«ENDIF»
 
+«IF cl.isNestedClass()» 
+class _«cl.name» {
+	«ELSE»
 class «cl.name» {
+	«ENDIF»
+	
 	«IF !cl.members.filter[m|m.languages.empty || m.languages.contains(OOLanguage.CPP)].filter[m | m.visibility == OOVisibility.PRIVATE].empty»
 	private:
 	«FOR m : cl.members.filter[m|m.languages.empty || m.languages.contains(OOLanguage.CPP)].filter[m | m.visibility == OOVisibility.PRIVATE]»
@@ -106,6 +123,11 @@ class «cl.name» {
 	«ENDIF»
 	
 }
+«IF !cl.ooclass.isEmpty» 
+
+}
+«ENDIF»
+
 	'''
 	
 	def String generate(OOMember m) '''
