@@ -565,6 +565,24 @@ public class OogenPackageImpl extends EPackageImpl implements OogenPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getOOClass_NestedClass() {
+		return (EAttribute)ooClassEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOOClass_Ooclass() {
+		return (EReference)ooClassEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getOOMember() {
 		return ooMemberEClass;
 	}
@@ -1589,6 +1607,8 @@ public class OogenPackageImpl extends EPackageImpl implements OogenPackage {
 		createEReference(ooClassEClass, OO_CLASS__METHODS);
 		createEAttribute(ooClassEClass, OO_CLASS__KEEP);
 		createEAttribute(ooClassEClass, OO_CLASS__LANGUAGES);
+		createEAttribute(ooClassEClass, OO_CLASS__NESTED_CLASS);
+		createEReference(ooClassEClass, OO_CLASS__OOCLASS);
 
 		ooMemberEClass = createEClass(OO_MEMBER);
 		createEAttribute(ooMemberEClass, OO_MEMBER__VISIBILITY);
@@ -1840,6 +1860,8 @@ public class OogenPackageImpl extends EPackageImpl implements OogenPackage {
 		initEReference(getOOClass_Methods(), this.getOOMethod(), null, "methods", null, 0, -1, OOClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOOClass_Keep(), ecorePackage.getEBoolean(), "keep", "false", 1, 1, OOClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOOClass_Languages(), this.getOOLanguage(), "languages", null, 0, -1, OOClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOOClass_NestedClass(), ecorePackage.getEBoolean(), "nestedClass", "false", 1, 1, OOClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOOClass_Ooclass(), this.getOOClass(), null, "ooclass", null, 0, -1, OOClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ooMemberEClass, OOMember.class, "OOMember", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getOOMember_Visibility(), this.getOOVisibility(), "visibility", null, 1, 1, OOMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

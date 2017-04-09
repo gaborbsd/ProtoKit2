@@ -43,6 +43,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOClass/methods"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOClass/keep"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOClass/languages"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOClass/nestedClass"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOClass/ooclass"/>
     </genClasses>
     <genClasses ecoreClass="oogen.ecore#//OOMember">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOMember/visibility"/>

@@ -34,6 +34,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link hu.bme.aut.oogen.OOClassImpl#getMethods <em>Methods</em>}</li>
  *   <li>{@link hu.bme.aut.oogen.OOClassImpl#isKeep <em>Keep</em>}</li>
  *   <li>{@link hu.bme.aut.oogen.OOClassImpl#getLanguages <em>Languages</em>}</li>
+ *   <li>{@link hu.bme.aut.oogen.OOClassImpl#isNestedClass <em>Nested Class</em>}</li>
+ *   <li>{@link hu.bme.aut.oogen.OOClassImpl#getOoclass <em>Ooclass</em>}</li>
  * </ul>
  *
  * @generated
@@ -108,6 +110,36 @@ public class OOClassImpl extends MinimalEObjectImpl.Container implements OOClass
 	 * @ordered
 	 */
 	protected EList<OOLanguage> languages;
+
+	/**
+	 * The default value of the '{@link #isNestedClass() <em>Nested Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isNestedClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean NESTED_CLASS_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isNestedClass() <em>Nested Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isNestedClass()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean nestedClass = NESTED_CLASS_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getOoclass() <em>Ooclass</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOoclass()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<OOClass> ooclass;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -252,6 +284,39 @@ public class OOClassImpl extends MinimalEObjectImpl.Container implements OOClass
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isNestedClass() {
+		return nestedClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNestedClass(boolean newNestedClass) {
+		boolean oldNestedClass = nestedClass;
+		nestedClass = newNestedClass;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, OogenPackage.OO_CLASS__NESTED_CLASS, oldNestedClass, nestedClass));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<OOClass> getOoclass() {
+		if (ooclass == null) {
+			ooclass = new EObjectContainmentEList<OOClass>(OOClass.class, this, OogenPackage.OO_CLASS__OOCLASS);
+		}
+		return ooclass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -277,6 +342,8 @@ public class OOClassImpl extends MinimalEObjectImpl.Container implements OOClass
 				return basicSetPackage(null, msgs);
 			case OogenPackage.OO_CLASS__METHODS:
 				return ((InternalEList<?>)getMethods()).basicRemove(otherEnd, msgs);
+			case OogenPackage.OO_CLASS__OOCLASS:
+				return ((InternalEList<?>)getOoclass()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -315,6 +382,10 @@ public class OOClassImpl extends MinimalEObjectImpl.Container implements OOClass
 				return isKeep();
 			case OogenPackage.OO_CLASS__LANGUAGES:
 				return getLanguages();
+			case OogenPackage.OO_CLASS__NESTED_CLASS:
+				return isNestedClass();
+			case OogenPackage.OO_CLASS__OOCLASS:
+				return getOoclass();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -349,6 +420,13 @@ public class OOClassImpl extends MinimalEObjectImpl.Container implements OOClass
 				getLanguages().clear();
 				getLanguages().addAll((Collection<? extends OOLanguage>)newValue);
 				return;
+			case OogenPackage.OO_CLASS__NESTED_CLASS:
+				setNestedClass((Boolean)newValue);
+				return;
+			case OogenPackage.OO_CLASS__OOCLASS:
+				getOoclass().clear();
+				getOoclass().addAll((Collection<? extends OOClass>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -379,6 +457,12 @@ public class OOClassImpl extends MinimalEObjectImpl.Container implements OOClass
 			case OogenPackage.OO_CLASS__LANGUAGES:
 				getLanguages().clear();
 				return;
+			case OogenPackage.OO_CLASS__NESTED_CLASS:
+				setNestedClass(NESTED_CLASS_EDEFAULT);
+				return;
+			case OogenPackage.OO_CLASS__OOCLASS:
+				getOoclass().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -403,6 +487,10 @@ public class OOClassImpl extends MinimalEObjectImpl.Container implements OOClass
 				return keep != KEEP_EDEFAULT;
 			case OogenPackage.OO_CLASS__LANGUAGES:
 				return languages != null && !languages.isEmpty();
+			case OogenPackage.OO_CLASS__NESTED_CLASS:
+				return nestedClass != NESTED_CLASS_EDEFAULT;
+			case OogenPackage.OO_CLASS__OOCLASS:
+				return ooclass != null && !ooclass.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -423,6 +511,8 @@ public class OOClassImpl extends MinimalEObjectImpl.Container implements OOClass
 		result.append(keep);
 		result.append(", languages: ");
 		result.append(languages);
+		result.append(", nestedClass: ");
+		result.append(nestedClass);
 		result.append(')');
 		return result.toString();
 	}

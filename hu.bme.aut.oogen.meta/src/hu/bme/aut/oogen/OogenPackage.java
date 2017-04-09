@@ -168,13 +168,31 @@ public interface OogenPackage extends EPackage {
 	int OO_CLASS__LANGUAGES = 5;
 
 	/**
+	 * The feature id for the '<em><b>Nested Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OO_CLASS__NESTED_CLASS = 6;
+
+	/**
+	 * The feature id for the '<em><b>Ooclass</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OO_CLASS__OOCLASS = 7;
+
+	/**
 	 * The number of structural features of the '<em>OO Class</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OO_CLASS_FEATURE_COUNT = 6;
+	int OO_CLASS_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>OO Class</em>' class.
@@ -2627,6 +2645,28 @@ public interface OogenPackage extends EPackage {
 	EAttribute getOOClass_Languages();
 
 	/**
+	 * Returns the meta object for the attribute '{@link hu.bme.aut.oogen.OOClass#isNestedClass <em>Nested Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Nested Class</em>'.
+	 * @see hu.bme.aut.oogen.OOClass#isNestedClass()
+	 * @see #getOOClass()
+	 * @generated
+	 */
+	EAttribute getOOClass_NestedClass();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link hu.bme.aut.oogen.OOClass#getOoclass <em>Ooclass</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Ooclass</em>'.
+	 * @see hu.bme.aut.oogen.OOClass#getOoclass()
+	 * @see #getOOClass()
+	 * @generated
+	 */
+	EReference getOOClass_Ooclass();
+
+	/**
 	 * Returns the meta object for class '{@link hu.bme.aut.oogen.OOMember <em>OO Member</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3888,6 +3928,22 @@ public interface OogenPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute OO_CLASS__LANGUAGES = eINSTANCE.getOOClass_Languages();
+
+		/**
+		 * The meta object literal for the '<em><b>Nested Class</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OO_CLASS__NESTED_CLASS = eINSTANCE.getOOClass_NestedClass();
+
+		/**
+		 * The meta object literal for the '<em><b>Ooclass</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OO_CLASS__OOCLASS = eINSTANCE.getOOClass_Ooclass();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.aut.oogen.OOMemberImpl <em>OO Member</em>}' class.

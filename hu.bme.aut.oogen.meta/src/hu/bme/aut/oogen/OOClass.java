@@ -21,6 +21,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link hu.bme.aut.oogen.OOClass#getMethods <em>Methods</em>}</li>
  *   <li>{@link hu.bme.aut.oogen.OOClass#isKeep <em>Keep</em>}</li>
  *   <li>{@link hu.bme.aut.oogen.OOClass#getLanguages <em>Languages</em>}</li>
+ *   <li>{@link hu.bme.aut.oogen.OOClass#isNestedClass <em>Nested Class</em>}</li>
+ *   <li>{@link hu.bme.aut.oogen.OOClass#getOoclass <em>Ooclass</em>}</li>
  * </ul>
  *
  * @see hu.bme.aut.oogen.OogenPackage#getOOClass()
@@ -158,5 +160,48 @@ public interface OOClass extends EObject {
 	 * @generated
 	 */
 	EList<OOLanguage> getLanguages();
+
+	/**
+	 * Returns the value of the '<em><b>Nested Class</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Nested Class</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Nested Class</em>' attribute.
+	 * @see #setNestedClass(boolean)
+	 * @see hu.bme.aut.oogen.OogenPackage#getOOClass_NestedClass()
+	 * @model default="false" unique="false" required="true"
+	 * @generated
+	 */
+	boolean isNestedClass();
+
+	/**
+	 * Sets the value of the '{@link hu.bme.aut.oogen.OOClass#isNestedClass <em>Nested Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Nested Class</em>' attribute.
+	 * @see #isNestedClass()
+	 * @generated
+	 */
+	void setNestedClass(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Ooclass</b></em>' containment reference list.
+	 * The list contents are of type {@link hu.bme.aut.oogen.OOClass}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Ooclass</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Ooclass</em>' containment reference list.
+	 * @see hu.bme.aut.oogen.OogenPackage#getOOClass_Ooclass()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<OOClass> getOoclass();
 
 } // OOClass
