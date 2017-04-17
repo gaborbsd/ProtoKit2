@@ -386,6 +386,13 @@ public class OogenPackageImpl extends EPackageImpl implements OogenPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass ooCompareEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum ooBaseTypeEEnum = null;
 
 	/**
@@ -408,6 +415,13 @@ public class OogenPackageImpl extends EPackageImpl implements OogenPackage {
 	 * @generated
 	 */
 	private EEnum ooLanguageEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum ooCompareTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -576,6 +590,15 @@ public class OogenPackageImpl extends EPackageImpl implements OogenPackage {
 	 */
 	public EReference getOOClass_Ooclass() {
 		return (EReference)ooClassEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOOClass_Oocompare() {
+		return (EReference)ooClassEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1537,6 +1560,42 @@ public class OogenPackageImpl extends EPackageImpl implements OogenPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getOOCompare() {
+		return ooCompareEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getOOCompare_CompareType() {
+		return (EAttribute)ooCompareEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOOCompare_Statements() {
+		return (EReference)ooCompareEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getOOCompare_ComparedObjectName() {
+		return (EAttribute)ooCompareEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getOOBaseType() {
 		return ooBaseTypeEEnum;
 	}
@@ -1566,6 +1625,15 @@ public class OogenPackageImpl extends EPackageImpl implements OogenPackage {
 	 */
 	public EEnum getOOLanguage() {
 		return ooLanguageEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getOOCompareType() {
+		return ooCompareTypeEEnum;
 	}
 
 	/**
@@ -1609,6 +1677,7 @@ public class OogenPackageImpl extends EPackageImpl implements OogenPackage {
 		createEAttribute(ooClassEClass, OO_CLASS__LANGUAGES);
 		createEAttribute(ooClassEClass, OO_CLASS__NESTED_CLASS);
 		createEReference(ooClassEClass, OO_CLASS__OOCLASS);
+		createEReference(ooClassEClass, OO_CLASS__OOCOMPARE);
 
 		ooMemberEClass = createEClass(OO_MEMBER);
 		createEAttribute(ooMemberEClass, OO_MEMBER__VISIBILITY);
@@ -1766,11 +1835,17 @@ public class OogenPackageImpl extends EPackageImpl implements OogenPackage {
 		createEReference(ooNewEClass, OO_NEW__CONSTRUCTOR_PARAMETERS);
 		createEReference(ooNewEClass, OO_NEW__TYPE);
 
+		ooCompareEClass = createEClass(OO_COMPARE);
+		createEAttribute(ooCompareEClass, OO_COMPARE__COMPARE_TYPE);
+		createEReference(ooCompareEClass, OO_COMPARE__STATEMENTS);
+		createEAttribute(ooCompareEClass, OO_COMPARE__COMPARED_OBJECT_NAME);
+
 		// Create enums
 		ooBaseTypeEEnum = createEEnum(OO_BASE_TYPE);
 		ooVisibilityEEnum = createEEnum(OO_VISIBILITY);
 		ooCollectionTypeEEnum = createEEnum(OO_COLLECTION_TYPE);
 		ooLanguageEEnum = createEEnum(OO_LANGUAGE);
+		ooCompareTypeEEnum = createEEnum(OO_COMPARE_TYPE);
 	}
 
 	/**
@@ -1862,6 +1937,7 @@ public class OogenPackageImpl extends EPackageImpl implements OogenPackage {
 		initEAttribute(getOOClass_Languages(), this.getOOLanguage(), "languages", null, 0, -1, OOClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOOClass_NestedClass(), ecorePackage.getEBoolean(), "nestedClass", "false", 1, 1, OOClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOOClass_Ooclass(), this.getOOClass(), null, "ooclass", null, 0, -1, OOClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOOClass_Oocompare(), this.getOOCompare(), null, "oocompare", null, 0, 3, OOClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ooMemberEClass, OOMember.class, "OOMember", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getOOMember_Visibility(), this.getOOVisibility(), "visibility", null, 1, 1, OOMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2019,6 +2095,11 @@ public class OogenPackageImpl extends EPackageImpl implements OogenPackage {
 		initEReference(getOONew_ConstructorParameters(), this.getOOVariable(), null, "constructorParameters", null, 0, -1, OONew.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOONew_Type(), this.getOOType(), null, "type", null, 1, 1, OONew.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(ooCompareEClass, OOCompare.class, "OOCompare", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getOOCompare_CompareType(), this.getOOCompareType(), "compareType", null, 1, 1, OOCompare.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOOCompare_Statements(), this.getOOStatement(), null, "statements", null, 0, -1, OOCompare.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOOCompare_ComparedObjectName(), ecorePackage.getEString(), "ComparedObjectName", null, 1, 1, OOCompare.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(ooBaseTypeEEnum, OOBaseType.class, "OOBaseType");
 		addEEnumLiteral(ooBaseTypeEEnum, OOBaseType.INT);
@@ -2043,6 +2124,11 @@ public class OogenPackageImpl extends EPackageImpl implements OogenPackage {
 		initEEnum(ooLanguageEEnum, OOLanguage.class, "OOLanguage");
 		addEEnumLiteral(ooLanguageEEnum, OOLanguage.JAVA);
 		addEEnumLiteral(ooLanguageEEnum, OOLanguage.CPP);
+
+		initEEnum(ooCompareTypeEEnum, OOCompareType.class, "OOCompareType");
+		addEEnumLiteral(ooCompareTypeEEnum, OOCompareType.GREATER_THAN);
+		addEEnumLiteral(ooCompareTypeEEnum, OOCompareType.LESS_THAN);
+		addEEnumLiteral(ooCompareTypeEEnum, OOCompareType.EQUALS);
 
 		// Create resource
 		createResource(eNS_URI);

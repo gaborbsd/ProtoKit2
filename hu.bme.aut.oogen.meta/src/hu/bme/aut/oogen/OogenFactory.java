@@ -490,6 +490,15 @@ public interface OogenFactory extends EFactory {
 	OONew createOONew();
 
 	/**
+	 * Returns a new object of class '<em>OO Compare</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>OO Compare</em>'.
+	 * @generated
+	 */
+	OOCompare createOOCompare();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

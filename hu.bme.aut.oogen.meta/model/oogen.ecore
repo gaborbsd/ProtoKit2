@@ -25,6 +25,8 @@
         defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ooclass" upperBound="-1"
         eType="#//OOClass" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="oocompare" upperBound="3"
+        eType="#//OOCompare" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OOMember" eSuperTypes="#//OOVariable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" ordered="false"
@@ -234,5 +236,18 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="constructorParameters"
         upperBound="-1" eType="#//OOVariable"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//OOType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OOCompare">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="compareType" lowerBound="1"
+        eType="#//OOCompareType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
+        eType="#//OOStatement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ComparedObjectName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OOCompareType">
+    <eLiterals name="GREATER_THAN"/>
+    <eLiterals name="LESS_THAN" value="1"/>
+    <eLiterals name="EQUALS" value="2"/>
   </eClassifiers>
 </ecore:EPackage>

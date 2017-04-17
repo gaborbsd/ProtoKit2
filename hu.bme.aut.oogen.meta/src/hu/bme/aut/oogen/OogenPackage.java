@@ -186,13 +186,22 @@ public interface OogenPackage extends EPackage {
 	int OO_CLASS__OOCLASS = 7;
 
 	/**
+	 * The feature id for the '<em><b>Oocompare</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OO_CLASS__OOCOMPARE = 8;
+
+	/**
 	 * The number of structural features of the '<em>OO Class</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OO_CLASS_FEATURE_COUNT = 8;
+	int OO_CLASS_FEATURE_COUNT = 9;
 
 	/**
 	 * The number of operations of the '<em>OO Class</em>' class.
@@ -2495,6 +2504,61 @@ public interface OogenPackage extends EPackage {
 	int OO_NEW_OPERATION_COUNT = OO_EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link hu.bme.aut.oogen.OOCompareImpl <em>OO Compare</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.bme.aut.oogen.OOCompareImpl
+	 * @see hu.bme.aut.oogen.OogenPackageImpl#getOOCompare()
+	 * @generated
+	 */
+	int OO_COMPARE = 52;
+
+	/**
+	 * The feature id for the '<em><b>Compare Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OO_COMPARE__COMPARE_TYPE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OO_COMPARE__STATEMENTS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Compared Object Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OO_COMPARE__COMPARED_OBJECT_NAME = 2;
+
+	/**
+	 * The number of structural features of the '<em>OO Compare</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OO_COMPARE_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>OO Compare</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OO_COMPARE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link hu.bme.aut.oogen.OOBaseType <em>OO Base Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2502,7 +2566,7 @@ public interface OogenPackage extends EPackage {
 	 * @see hu.bme.aut.oogen.OogenPackageImpl#getOOBaseType()
 	 * @generated
 	 */
-	int OO_BASE_TYPE = 52;
+	int OO_BASE_TYPE = 53;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.aut.oogen.OOVisibility <em>OO Visibility</em>}' enum.
@@ -2512,7 +2576,7 @@ public interface OogenPackage extends EPackage {
 	 * @see hu.bme.aut.oogen.OogenPackageImpl#getOOVisibility()
 	 * @generated
 	 */
-	int OO_VISIBILITY = 53;
+	int OO_VISIBILITY = 54;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.aut.oogen.OOCollectionType <em>OO Collection Type</em>}' enum.
@@ -2522,7 +2586,7 @@ public interface OogenPackage extends EPackage {
 	 * @see hu.bme.aut.oogen.OogenPackageImpl#getOOCollectionType()
 	 * @generated
 	 */
-	int OO_COLLECTION_TYPE = 54;
+	int OO_COLLECTION_TYPE = 55;
 
 
 	/**
@@ -2533,7 +2597,18 @@ public interface OogenPackage extends EPackage {
 	 * @see hu.bme.aut.oogen.OogenPackageImpl#getOOLanguage()
 	 * @generated
 	 */
-	int OO_LANGUAGE = 55;
+	int OO_LANGUAGE = 56;
+
+
+	/**
+	 * The meta object id for the '{@link hu.bme.aut.oogen.OOCompareType <em>OO Compare Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.bme.aut.oogen.OOCompareType
+	 * @see hu.bme.aut.oogen.OogenPackageImpl#getOOCompareType()
+	 * @generated
+	 */
+	int OO_COMPARE_TYPE = 57;
 
 
 	/**
@@ -2665,6 +2740,17 @@ public interface OogenPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getOOClass_Ooclass();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link hu.bme.aut.oogen.OOClass#getOocompare <em>Oocompare</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Oocompare</em>'.
+	 * @see hu.bme.aut.oogen.OOClass#getOocompare()
+	 * @see #getOOClass()
+	 * @generated
+	 */
+	EReference getOOClass_Oocompare();
 
 	/**
 	 * Returns the meta object for class '{@link hu.bme.aut.oogen.OOMember <em>OO Member</em>}'.
@@ -3783,6 +3869,49 @@ public interface OogenPackage extends EPackage {
 	EReference getOONew_Type();
 
 	/**
+	 * Returns the meta object for class '{@link hu.bme.aut.oogen.OOCompare <em>OO Compare</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>OO Compare</em>'.
+	 * @see hu.bme.aut.oogen.OOCompare
+	 * @generated
+	 */
+	EClass getOOCompare();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.bme.aut.oogen.OOCompare#getCompareType <em>Compare Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Compare Type</em>'.
+	 * @see hu.bme.aut.oogen.OOCompare#getCompareType()
+	 * @see #getOOCompare()
+	 * @generated
+	 */
+	EAttribute getOOCompare_CompareType();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link hu.bme.aut.oogen.OOCompare#getStatements <em>Statements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Statements</em>'.
+	 * @see hu.bme.aut.oogen.OOCompare#getStatements()
+	 * @see #getOOCompare()
+	 * @generated
+	 */
+	EReference getOOCompare_Statements();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.bme.aut.oogen.OOCompare#getComparedObjectName <em>Compared Object Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Compared Object Name</em>'.
+	 * @see hu.bme.aut.oogen.OOCompare#getComparedObjectName()
+	 * @see #getOOCompare()
+	 * @generated
+	 */
+	EAttribute getOOCompare_ComparedObjectName();
+
+	/**
 	 * Returns the meta object for enum '{@link hu.bme.aut.oogen.OOBaseType <em>OO Base Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3821,6 +3950,16 @@ public interface OogenPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getOOLanguage();
+
+	/**
+	 * Returns the meta object for enum '{@link hu.bme.aut.oogen.OOCompareType <em>OO Compare Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>OO Compare Type</em>'.
+	 * @see hu.bme.aut.oogen.OOCompareType
+	 * @generated
+	 */
+	EEnum getOOCompareType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -3944,6 +4083,14 @@ public interface OogenPackage extends EPackage {
 		 * @generated
 		 */
 		EReference OO_CLASS__OOCLASS = eINSTANCE.getOOClass_Ooclass();
+
+		/**
+		 * The meta object literal for the '<em><b>Oocompare</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OO_CLASS__OOCOMPARE = eINSTANCE.getOOClass_Oocompare();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.aut.oogen.OOMemberImpl <em>OO Member</em>}' class.
@@ -4894,6 +5041,40 @@ public interface OogenPackage extends EPackage {
 		EReference OO_NEW__TYPE = eINSTANCE.getOONew_Type();
 
 		/**
+		 * The meta object literal for the '{@link hu.bme.aut.oogen.OOCompareImpl <em>OO Compare</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.bme.aut.oogen.OOCompareImpl
+		 * @see hu.bme.aut.oogen.OogenPackageImpl#getOOCompare()
+		 * @generated
+		 */
+		EClass OO_COMPARE = eINSTANCE.getOOCompare();
+
+		/**
+		 * The meta object literal for the '<em><b>Compare Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OO_COMPARE__COMPARE_TYPE = eINSTANCE.getOOCompare_CompareType();
+
+		/**
+		 * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OO_COMPARE__STATEMENTS = eINSTANCE.getOOCompare_Statements();
+
+		/**
+		 * The meta object literal for the '<em><b>Compared Object Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OO_COMPARE__COMPARED_OBJECT_NAME = eINSTANCE.getOOCompare_ComparedObjectName();
+
+		/**
 		 * The meta object literal for the '{@link hu.bme.aut.oogen.OOBaseType <em>OO Base Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4932,6 +5113,16 @@ public interface OogenPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum OO_LANGUAGE = eINSTANCE.getOOLanguage();
+
+		/**
+		 * The meta object literal for the '{@link hu.bme.aut.oogen.OOCompareType <em>OO Compare Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.bme.aut.oogen.OOCompareType
+		 * @see hu.bme.aut.oogen.OogenPackageImpl#getOOCompareType()
+		 * @generated
+		 */
+		EEnum OO_COMPARE_TYPE = eINSTANCE.getOOCompareType();
 
 	}
 

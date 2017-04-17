@@ -274,6 +274,10 @@ public class OogenAdapterFactory extends AdapterFactoryImpl {
 				return createOONewAdapter();
 			}
 			@Override
+			public Adapter caseOOCompare(OOCompare object) {
+				return createOOCompareAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -1018,6 +1022,20 @@ public class OogenAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createOONewAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.bme.aut.oogen.OOCompare <em>OO Compare</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.bme.aut.oogen.OOCompare
+	 * @generated
+	 */
+	public Adapter createOOCompareAdapter() {
 		return null;
 	}
 

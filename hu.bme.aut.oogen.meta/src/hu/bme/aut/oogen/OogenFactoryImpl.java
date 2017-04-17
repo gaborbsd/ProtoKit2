@@ -107,6 +107,7 @@ public class OogenFactoryImpl extends EFactoryImpl implements OogenFactory {
 			case OogenPackage.OO_TYPE_CAST: return createOOTypeCast();
 			case OogenPackage.OO_BOOL_LITERAL: return createOOBoolLiteral();
 			case OogenPackage.OO_NEW: return createOONew();
+			case OogenPackage.OO_COMPARE: return createOOCompare();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -128,6 +129,8 @@ public class OogenFactoryImpl extends EFactoryImpl implements OogenFactory {
 				return createOOCollectionTypeFromString(eDataType, initialValue);
 			case OogenPackage.OO_LANGUAGE:
 				return createOOLanguageFromString(eDataType, initialValue);
+			case OogenPackage.OO_COMPARE_TYPE:
+				return createOOCompareTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -149,6 +152,8 @@ public class OogenFactoryImpl extends EFactoryImpl implements OogenFactory {
 				return convertOOCollectionTypeToString(eDataType, instanceValue);
 			case OogenPackage.OO_LANGUAGE:
 				return convertOOLanguageToString(eDataType, instanceValue);
+			case OogenPackage.OO_COMPARE_TYPE:
+				return convertOOCompareTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -679,6 +684,16 @@ public class OogenFactoryImpl extends EFactoryImpl implements OogenFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public OOCompare createOOCompare() {
+		OOCompareImpl ooCompare = new OOCompareImpl();
+		return ooCompare;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public OOBaseType createOOBaseTypeFromString(EDataType eDataType, String initialValue) {
 		OOBaseType result = OOBaseType.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -751,6 +766,26 @@ public class OogenFactoryImpl extends EFactoryImpl implements OogenFactory {
 	 * @generated
 	 */
 	public String convertOOLanguageToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OOCompareType createOOCompareTypeFromString(EDataType eDataType, String initialValue) {
+		OOCompareType result = OOCompareType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertOOCompareTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

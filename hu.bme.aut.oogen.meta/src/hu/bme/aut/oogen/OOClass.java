@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link hu.bme.aut.oogen.OOClass#getLanguages <em>Languages</em>}</li>
  *   <li>{@link hu.bme.aut.oogen.OOClass#isNestedClass <em>Nested Class</em>}</li>
  *   <li>{@link hu.bme.aut.oogen.OOClass#getOoclass <em>Ooclass</em>}</li>
+ *   <li>{@link hu.bme.aut.oogen.OOClass#getOocompare <em>Oocompare</em>}</li>
  * </ul>
  *
  * @see hu.bme.aut.oogen.OogenPackage#getOOClass()
@@ -203,5 +204,21 @@ public interface OOClass extends EObject {
 	 * @generated
 	 */
 	EList<OOClass> getOoclass();
+
+	/**
+	 * Returns the value of the '<em><b>Oocompare</b></em>' containment reference list.
+	 * The list contents are of type {@link hu.bme.aut.oogen.OOCompare}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Oocompare</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Oocompare</em>' containment reference list.
+	 * @see hu.bme.aut.oogen.OogenPackage#getOOClass_Oocompare()
+	 * @model containment="true" upper="3"
+	 * @generated
+	 */
+	EList<OOCompare> getOocompare();
 
 } // OOClass

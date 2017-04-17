@@ -36,6 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link hu.bme.aut.oogen.OOClassImpl#getLanguages <em>Languages</em>}</li>
  *   <li>{@link hu.bme.aut.oogen.OOClassImpl#isNestedClass <em>Nested Class</em>}</li>
  *   <li>{@link hu.bme.aut.oogen.OOClassImpl#getOoclass <em>Ooclass</em>}</li>
+ *   <li>{@link hu.bme.aut.oogen.OOClassImpl#getOocompare <em>Oocompare</em>}</li>
  * </ul>
  *
  * @generated
@@ -140,6 +141,16 @@ public class OOClassImpl extends MinimalEObjectImpl.Container implements OOClass
 	 * @ordered
 	 */
 	protected EList<OOClass> ooclass;
+
+	/**
+	 * The cached value of the '{@link #getOocompare() <em>Oocompare</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOocompare()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<OOCompare> oocompare;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -317,6 +328,18 @@ public class OOClassImpl extends MinimalEObjectImpl.Container implements OOClass
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<OOCompare> getOocompare() {
+		if (oocompare == null) {
+			oocompare = new EObjectContainmentEList<OOCompare>(OOCompare.class, this, OogenPackage.OO_CLASS__OOCOMPARE);
+		}
+		return oocompare;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -344,6 +367,8 @@ public class OOClassImpl extends MinimalEObjectImpl.Container implements OOClass
 				return ((InternalEList<?>)getMethods()).basicRemove(otherEnd, msgs);
 			case OogenPackage.OO_CLASS__OOCLASS:
 				return ((InternalEList<?>)getOoclass()).basicRemove(otherEnd, msgs);
+			case OogenPackage.OO_CLASS__OOCOMPARE:
+				return ((InternalEList<?>)getOocompare()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -386,6 +411,8 @@ public class OOClassImpl extends MinimalEObjectImpl.Container implements OOClass
 				return isNestedClass();
 			case OogenPackage.OO_CLASS__OOCLASS:
 				return getOoclass();
+			case OogenPackage.OO_CLASS__OOCOMPARE:
+				return getOocompare();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -427,6 +454,10 @@ public class OOClassImpl extends MinimalEObjectImpl.Container implements OOClass
 				getOoclass().clear();
 				getOoclass().addAll((Collection<? extends OOClass>)newValue);
 				return;
+			case OogenPackage.OO_CLASS__OOCOMPARE:
+				getOocompare().clear();
+				getOocompare().addAll((Collection<? extends OOCompare>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -463,6 +494,9 @@ public class OOClassImpl extends MinimalEObjectImpl.Container implements OOClass
 			case OogenPackage.OO_CLASS__OOCLASS:
 				getOoclass().clear();
 				return;
+			case OogenPackage.OO_CLASS__OOCOMPARE:
+				getOocompare().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -491,6 +525,8 @@ public class OOClassImpl extends MinimalEObjectImpl.Container implements OOClass
 				return nestedClass != NESTED_CLASS_EDEFAULT;
 			case OogenPackage.OO_CLASS__OOCLASS:
 				return ooclass != null && !ooclass.isEmpty();
+			case OogenPackage.OO_CLASS__OOCOMPARE:
+				return oocompare != null && !oocompare.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

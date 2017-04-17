@@ -32,6 +32,11 @@
       <genEnumLiterals ecoreEnumLiteral="oogen.ecore#//OOLanguage/JAVA"/>
       <genEnumLiterals ecoreEnumLiteral="oogen.ecore#//OOLanguage/CPP"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="oogen.ecore#//OOCompareType">
+      <genEnumLiterals ecoreEnumLiteral="oogen.ecore#//OOCompareType/GREATER_THAN"/>
+      <genEnumLiterals ecoreEnumLiteral="oogen.ecore#//OOCompareType/LESS_THAN"/>
+      <genEnumLiterals ecoreEnumLiteral="oogen.ecore#//OOCompareType/EQUALS"/>
+    </genEnums>
     <genClasses ecoreClass="oogen.ecore#//OOPackage">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOPackage/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOPackage/classes"/>
@@ -45,6 +50,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOClass/languages"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOClass/nestedClass"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOClass/ooclass"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOClass/oocompare"/>
     </genClasses>
     <genClasses ecoreClass="oogen.ecore#//OOMember">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOMember/visibility"/>
@@ -178,6 +184,11 @@
     <genClasses ecoreClass="oogen.ecore#//OONew">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OONew/constructorParameters"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference oogen.ecore#//OONew/type"/>
+    </genClasses>
+    <genClasses ecoreClass="oogen.ecore#//OOCompare">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOCompare/compareType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOCompare/statements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOCompare/ComparedObjectName"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
