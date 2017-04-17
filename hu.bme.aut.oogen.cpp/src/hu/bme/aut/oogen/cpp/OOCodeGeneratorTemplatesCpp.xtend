@@ -46,6 +46,7 @@ import hu.bme.aut.oogen.OOLanguageSpecificExpression
 import hu.bme.aut.oogen.OOTypeCast
 import hu.bme.aut.oogen.OOBoolLiteral
 import hu.bme.aut.oogen.OONew
+import hu.bme.aut.oogen.OOCompareType
 
 class OOCodeGeneratorTemplatesCpp implements OOCodeGeneratorTemplates {
 	
@@ -122,6 +123,10 @@ class «cl.name» {
 	«ENDFOR»
 	«ENDIF»
 	
+	«IF !cl.oocompare.isEmpty»
+	«generateNaturalOrder(cl)»
+	«ENDIF»
+	
 }
 «IF !cl.ooclass.isEmpty» 
 
@@ -129,6 +134,38 @@ class «cl.name» {
 «ENDIF»
 
 	'''
+
+def String generateNaturalOrder(OOClass c)'''
+	
+	«FOR compare : c.oocompare»
+		«IF compare.compareType == OOCompareType.GREATER_THAN» 
+				bool operator >(const «c.name»& «compare.comparedObjectName») {
+					«FOR statement : compare.statements»
+					 	«statement.generateStatement»		
+					«ENDFOR»	
+				}
+		«ENDIF»
+				
+		«IF compare.compareType == OOCompareType.LESS_THAN» 
+				bool operator <(const «c.name»& «compare.comparedObjectName») {
+									«FOR statement : compare.statements»
+									 	«statement.generateStatement»		
+									«ENDFOR»	
+								}
+		«ENDIF»
+				
+		«IF compare.compareType == OOCompareType.EQUALS» 
+				bool operator =(const «c.name»& «compare.comparedObjectName») {
+													«FOR statement : compare.statements»
+													 	«statement.generateStatement»		
+													«ENDFOR»	
+												}
+		«ENDIF»
+	«ENDFOR»
+	
+	}
+	'''
+
 	
 	def String generate(OOMember m) '''
 «m.type.generate» «m.name»;
