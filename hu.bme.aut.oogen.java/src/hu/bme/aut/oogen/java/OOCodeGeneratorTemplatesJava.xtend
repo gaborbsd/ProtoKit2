@@ -58,17 +58,36 @@ class OOCodeGeneratorTemplatesJava implements OOCodeGeneratorTemplates {
 	}
 	
 	override String generate(OOClass cl) '''
-package «cl.package.name»;
 
-import java.nio.ByteBuffer;
-import java.util.*;
 
-import hu.bme.aut.protokit.runtime.ProtoUtil;
+	«IF !cl.isNestedClass()» 
+	package «cl.package.name»;
 	
+	import java.nio.ByteBuffer;
+	import java.util.*;
+	
+	import hu.bme.aut.protokit.runtime.ProtoUtil;
+	«ENDIF»
+	
+	
+
+«IF cl.isNestedClass()» 
+public static class _«cl.name» {
+	«ELSE»
 public class «cl.name» {
+	«ENDIF»
+	
 	«FOR m : cl.members.filter[m|m.languages.empty || m.languages.contains(OOLanguage.JAVA)]»
 	«m.generate»
 	«ENDFOR»
+	
+	«IF !cl.ooclass.isEmpty» 
+	«FOR c : cl.ooclass»
+	«generate(c)»
+	
+	«ENDFOR»
+	«ENDIF»
+	
 	
 	«FOR m : cl.methods.filter[m|m.languages.empty || m.languages.contains(OOLanguage.JAVA)]»
 	«m.generate»
