@@ -47,6 +47,7 @@ import hu.bme.aut.oogen.OOTypeCast
 import hu.bme.aut.oogen.OOBoolLiteral
 import hu.bme.aut.oogen.OONew
 
+
 class OOCodeGeneratorTemplatesJava implements OOCodeGeneratorTemplates {
 	
 	private static OOCodeGeneratorTemplatesJava instance;
@@ -72,9 +73,9 @@ class OOCodeGeneratorTemplatesJava implements OOCodeGeneratorTemplates {
 	
 
 «IF cl.isNestedClass()» 
-public static class _«cl.name» {
+public static class _«cl.name» «generateInterfaceImplementation(cl)»{
 	«ELSE»
-public class «cl.name» {
+public class «cl.name»  «generateInterfaceImplementation(cl)» {
 	«ENDIF»
 	
 	«FOR m : cl.members.filter[m|m.languages.empty || m.languages.contains(OOLanguage.JAVA)]»
@@ -92,8 +93,34 @@ public class «cl.name» {
 	«FOR m : cl.methods.filter[m|m.languages.empty || m.languages.contains(OOLanguage.JAVA)]»
 	«m.generate»
 	«ENDFOR»
+	
+	«IF !cl.oocompare.isEmpty»
+	«generateCompareTo(cl)»
+	«ENDIF»
+	
+	
 }
 	'''
+	
+	def String generateCompareTo(OOClass c)'''
+	public int compareTo(«c.name» «c.oocompare.get(0).comparedObjectName») {
+	«FOR compare : c.oocompare»
+				«FOR statement : compare.statements»
+						«statement.generateStatement»		
+				«ENDFOR»
+	«ENDFOR»
+	
+	}
+	'''		
+	
+
+	
+	
+	def String generateInterfaceImplementation(OOClass c)'''
+		«IF !c.oocompare.isEmpty»
+		implemets Comparable<«c.name»> 
+		«ENDIF»
+'''		
 	
 	def String generate(OOMember m) '''
 «m.visibility.generate» «m.generateTransient» «m.type.generate» «m.name»«m.generateInit»;
