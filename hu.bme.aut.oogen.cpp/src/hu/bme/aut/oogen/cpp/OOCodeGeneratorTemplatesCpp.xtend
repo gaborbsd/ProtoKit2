@@ -47,6 +47,7 @@ import hu.bme.aut.oogen.OOTypeCast
 import hu.bme.aut.oogen.OOBoolLiteral
 import hu.bme.aut.oogen.OONew
 import hu.bme.aut.oogen.OOCompareType
+import hu.bme.aut.oogen.OOPrint
 
 class OOCodeGeneratorTemplatesCpp implements OOCodeGeneratorTemplates {
 	
@@ -261,6 +262,9 @@ def String generateNaturalOrder(OOClass c)'''
 	def dispatch String generateStatement(OOReturn s) '''return «s.returnedExpresssion.generateExpression»;'''
 	
 	def dispatch String generateStatement(OOEmptyStatement s) ''';'''
+	
+	def dispatch String generateStatement(OOPrint p) '''std::cout  «FOR a : p.parameter» << «a.generateReference» «ENDFOR»;'''
+		
 	
 	def dispatch String generateStatement(OOIf s) '''
 	«var List<OOIf> list = Collections.singletonList(s)»

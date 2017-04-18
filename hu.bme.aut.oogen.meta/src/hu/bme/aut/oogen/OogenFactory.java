@@ -499,6 +499,15 @@ public interface OogenFactory extends EFactory {
 	OOCompare createOOCompare();
 
 	/**
+	 * Returns a new object of class '<em>OO Print</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>OO Print</em>'.
+	 * @generated
+	 */
+	OOPrint createOOPrint();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

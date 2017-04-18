@@ -393,6 +393,13 @@ public class OogenPackageImpl extends EPackageImpl implements OogenPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass ooPrintEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum ooBaseTypeEEnum = null;
 
 	/**
@@ -1596,6 +1603,24 @@ public class OogenPackageImpl extends EPackageImpl implements OogenPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getOOPrint() {
+		return ooPrintEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOOPrint_Parameter() {
+		return (EReference)ooPrintEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getOOBaseType() {
 		return ooBaseTypeEEnum;
 	}
@@ -1840,6 +1865,9 @@ public class OogenPackageImpl extends EPackageImpl implements OogenPackage {
 		createEReference(ooCompareEClass, OO_COMPARE__STATEMENTS);
 		createEAttribute(ooCompareEClass, OO_COMPARE__COMPARED_OBJECT_NAME);
 
+		ooPrintEClass = createEClass(OO_PRINT);
+		createEReference(ooPrintEClass, OO_PRINT__PARAMETER);
+
 		// Create enums
 		ooBaseTypeEEnum = createEEnum(OO_BASE_TYPE);
 		ooVisibilityEEnum = createEEnum(OO_VISIBILITY);
@@ -1922,6 +1950,7 @@ public class OogenPackageImpl extends EPackageImpl implements OogenPackage {
 		ooTypeCastEClass.getESuperTypes().add(this.getOOExpression());
 		ooBoolLiteralEClass.getESuperTypes().add(this.getOOExpression());
 		ooNewEClass.getESuperTypes().add(this.getOOExpression());
+		ooPrintEClass.getESuperTypes().add(this.getOOStatement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(ooPackageEClass, OOPackage.class, "OOPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2099,6 +2128,9 @@ public class OogenPackageImpl extends EPackageImpl implements OogenPackage {
 		initEAttribute(getOOCompare_CompareType(), this.getOOCompareType(), "compareType", null, 1, 1, OOCompare.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOOCompare_Statements(), this.getOOStatement(), null, "statements", null, 0, -1, OOCompare.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOOCompare_ComparedObjectName(), ecorePackage.getEString(), "ComparedObjectName", null, 1, 1, OOCompare.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(ooPrintEClass, OOPrint.class, "OOPrint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getOOPrint_Parameter(), this.getOOVariable(), null, "parameter", null, 0, -1, OOPrint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(ooBaseTypeEEnum, OOBaseType.class, "OOBaseType");

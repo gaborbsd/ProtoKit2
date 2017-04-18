@@ -2559,6 +2559,43 @@ public interface OogenPackage extends EPackage {
 	int OO_COMPARE_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link hu.bme.aut.oogen.OOPrintImpl <em>OO Print</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.bme.aut.oogen.OOPrintImpl
+	 * @see hu.bme.aut.oogen.OogenPackageImpl#getOOPrint()
+	 * @generated
+	 */
+	int OO_PRINT = 53;
+
+	/**
+	 * The feature id for the '<em><b>Parameter</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OO_PRINT__PARAMETER = OO_STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>OO Print</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OO_PRINT_FEATURE_COUNT = OO_STATEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>OO Print</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OO_PRINT_OPERATION_COUNT = OO_STATEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link hu.bme.aut.oogen.OOBaseType <em>OO Base Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2566,7 +2603,7 @@ public interface OogenPackage extends EPackage {
 	 * @see hu.bme.aut.oogen.OogenPackageImpl#getOOBaseType()
 	 * @generated
 	 */
-	int OO_BASE_TYPE = 53;
+	int OO_BASE_TYPE = 54;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.aut.oogen.OOVisibility <em>OO Visibility</em>}' enum.
@@ -2576,7 +2613,7 @@ public interface OogenPackage extends EPackage {
 	 * @see hu.bme.aut.oogen.OogenPackageImpl#getOOVisibility()
 	 * @generated
 	 */
-	int OO_VISIBILITY = 54;
+	int OO_VISIBILITY = 55;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.aut.oogen.OOCollectionType <em>OO Collection Type</em>}' enum.
@@ -2586,7 +2623,7 @@ public interface OogenPackage extends EPackage {
 	 * @see hu.bme.aut.oogen.OogenPackageImpl#getOOCollectionType()
 	 * @generated
 	 */
-	int OO_COLLECTION_TYPE = 55;
+	int OO_COLLECTION_TYPE = 56;
 
 
 	/**
@@ -2597,7 +2634,7 @@ public interface OogenPackage extends EPackage {
 	 * @see hu.bme.aut.oogen.OogenPackageImpl#getOOLanguage()
 	 * @generated
 	 */
-	int OO_LANGUAGE = 56;
+	int OO_LANGUAGE = 57;
 
 
 	/**
@@ -2608,7 +2645,7 @@ public interface OogenPackage extends EPackage {
 	 * @see hu.bme.aut.oogen.OogenPackageImpl#getOOCompareType()
 	 * @generated
 	 */
-	int OO_COMPARE_TYPE = 57;
+	int OO_COMPARE_TYPE = 58;
 
 
 	/**
@@ -3912,6 +3949,27 @@ public interface OogenPackage extends EPackage {
 	EAttribute getOOCompare_ComparedObjectName();
 
 	/**
+	 * Returns the meta object for class '{@link hu.bme.aut.oogen.OOPrint <em>OO Print</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>OO Print</em>'.
+	 * @see hu.bme.aut.oogen.OOPrint
+	 * @generated
+	 */
+	EClass getOOPrint();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link hu.bme.aut.oogen.OOPrint#getParameter <em>Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Parameter</em>'.
+	 * @see hu.bme.aut.oogen.OOPrint#getParameter()
+	 * @see #getOOPrint()
+	 * @generated
+	 */
+	EReference getOOPrint_Parameter();
+
+	/**
 	 * Returns the meta object for enum '{@link hu.bme.aut.oogen.OOBaseType <em>OO Base Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5073,6 +5131,24 @@ public interface OogenPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute OO_COMPARE__COMPARED_OBJECT_NAME = eINSTANCE.getOOCompare_ComparedObjectName();
+
+		/**
+		 * The meta object literal for the '{@link hu.bme.aut.oogen.OOPrintImpl <em>OO Print</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.bme.aut.oogen.OOPrintImpl
+		 * @see hu.bme.aut.oogen.OogenPackageImpl#getOOPrint()
+		 * @generated
+		 */
+		EClass OO_PRINT = eINSTANCE.getOOPrint();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameter</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OO_PRINT__PARAMETER = eINSTANCE.getOOPrint_Parameter();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.aut.oogen.OOBaseType <em>OO Base Type</em>}' enum.

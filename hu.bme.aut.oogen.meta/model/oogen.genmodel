@@ -190,5 +190,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOCompare/statements"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOCompare/ComparedObjectName"/>
     </genClasses>
+    <genClasses ecoreClass="oogen.ecore#//OOPrint">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOPrint/parameter"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -46,7 +46,7 @@ import hu.bme.aut.oogen.OOLanguage
 import hu.bme.aut.oogen.OOTypeCast
 import hu.bme.aut.oogen.OOBoolLiteral
 import hu.bme.aut.oogen.OONew
-
+import hu.bme.aut.oogen.OOPrint
 
 class OOCodeGeneratorTemplatesJava implements OOCodeGeneratorTemplates {
 	
@@ -237,6 +237,12 @@ public class «cl.name»  «generateInterfaceImplementation(cl)» {
 	def dispatch String generateStatement(OOReturn s) '''return «s.returnedExpresssion.generateExpression»;'''
 	
 	def dispatch String generateStatement(OOEmptyStatement s) ''';'''
+	
+	def dispatch String generateStatement(OOPrint p) '''
+		«FOR a : p.parameter»
+		System.out.println(«a.generateReference»);
+		«ENDFOR»
+	'''
 	
 	def dispatch String generateStatement(OOIf s) '''
 	«var List<OOIf> list = Collections.singletonList(s)»

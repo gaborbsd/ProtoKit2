@@ -108,6 +108,7 @@ public class OogenFactoryImpl extends EFactoryImpl implements OogenFactory {
 			case OogenPackage.OO_BOOL_LITERAL: return createOOBoolLiteral();
 			case OogenPackage.OO_NEW: return createOONew();
 			case OogenPackage.OO_COMPARE: return createOOCompare();
+			case OogenPackage.OO_PRINT: return createOOPrint();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -687,6 +688,16 @@ public class OogenFactoryImpl extends EFactoryImpl implements OogenFactory {
 	public OOCompare createOOCompare() {
 		OOCompareImpl ooCompare = new OOCompareImpl();
 		return ooCompare;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OOPrint createOOPrint() {
+		OOPrintImpl ooPrint = new OOPrintImpl();
+		return ooPrint;
 	}
 
 	/**
