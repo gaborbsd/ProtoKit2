@@ -508,6 +508,15 @@ public interface OogenFactory extends EFactory {
 	OOPrint createOOPrint();
 
 	/**
+	 * Returns a new object of class '<em>OO Write File</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>OO Write File</em>'.
+	 * @generated
+	 */
+	OOWriteFile createOOWriteFile();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

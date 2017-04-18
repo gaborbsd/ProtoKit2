@@ -193,5 +193,9 @@
     <genClasses ecoreClass="oogen.ecore#//OOPrint">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOPrint/parameter"/>
     </genClasses>
+    <genClasses ecoreClass="oogen.ecore#//OOWriteFile">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference oogen.ecore#//OOWriteFile/parameter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute oogen.ecore#//OOWriteFile/fileName"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

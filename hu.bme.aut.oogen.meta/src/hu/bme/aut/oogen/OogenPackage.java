@@ -2596,6 +2596,52 @@ public interface OogenPackage extends EPackage {
 	int OO_PRINT_OPERATION_COUNT = OO_STATEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link hu.bme.aut.oogen.OOWriteFileImpl <em>OO Write File</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.bme.aut.oogen.OOWriteFileImpl
+	 * @see hu.bme.aut.oogen.OogenPackageImpl#getOOWriteFile()
+	 * @generated
+	 */
+	int OO_WRITE_FILE = 54;
+
+	/**
+	 * The feature id for the '<em><b>Parameter</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OO_WRITE_FILE__PARAMETER = OO_STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>File Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OO_WRITE_FILE__FILE_NAME = OO_STATEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>OO Write File</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OO_WRITE_FILE_FEATURE_COUNT = OO_STATEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>OO Write File</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OO_WRITE_FILE_OPERATION_COUNT = OO_STATEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link hu.bme.aut.oogen.OOBaseType <em>OO Base Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2603,7 +2649,7 @@ public interface OogenPackage extends EPackage {
 	 * @see hu.bme.aut.oogen.OogenPackageImpl#getOOBaseType()
 	 * @generated
 	 */
-	int OO_BASE_TYPE = 54;
+	int OO_BASE_TYPE = 55;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.aut.oogen.OOVisibility <em>OO Visibility</em>}' enum.
@@ -2613,7 +2659,7 @@ public interface OogenPackage extends EPackage {
 	 * @see hu.bme.aut.oogen.OogenPackageImpl#getOOVisibility()
 	 * @generated
 	 */
-	int OO_VISIBILITY = 55;
+	int OO_VISIBILITY = 56;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.aut.oogen.OOCollectionType <em>OO Collection Type</em>}' enum.
@@ -2623,7 +2669,7 @@ public interface OogenPackage extends EPackage {
 	 * @see hu.bme.aut.oogen.OogenPackageImpl#getOOCollectionType()
 	 * @generated
 	 */
-	int OO_COLLECTION_TYPE = 56;
+	int OO_COLLECTION_TYPE = 57;
 
 
 	/**
@@ -2634,7 +2680,7 @@ public interface OogenPackage extends EPackage {
 	 * @see hu.bme.aut.oogen.OogenPackageImpl#getOOLanguage()
 	 * @generated
 	 */
-	int OO_LANGUAGE = 57;
+	int OO_LANGUAGE = 58;
 
 
 	/**
@@ -2645,7 +2691,7 @@ public interface OogenPackage extends EPackage {
 	 * @see hu.bme.aut.oogen.OogenPackageImpl#getOOCompareType()
 	 * @generated
 	 */
-	int OO_COMPARE_TYPE = 58;
+	int OO_COMPARE_TYPE = 59;
 
 
 	/**
@@ -3970,6 +4016,38 @@ public interface OogenPackage extends EPackage {
 	EReference getOOPrint_Parameter();
 
 	/**
+	 * Returns the meta object for class '{@link hu.bme.aut.oogen.OOWriteFile <em>OO Write File</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>OO Write File</em>'.
+	 * @see hu.bme.aut.oogen.OOWriteFile
+	 * @generated
+	 */
+	EClass getOOWriteFile();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link hu.bme.aut.oogen.OOWriteFile#getParameter <em>Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Parameter</em>'.
+	 * @see hu.bme.aut.oogen.OOWriteFile#getParameter()
+	 * @see #getOOWriteFile()
+	 * @generated
+	 */
+	EReference getOOWriteFile_Parameter();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.bme.aut.oogen.OOWriteFile#getFileName <em>File Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>File Name</em>'.
+	 * @see hu.bme.aut.oogen.OOWriteFile#getFileName()
+	 * @see #getOOWriteFile()
+	 * @generated
+	 */
+	EAttribute getOOWriteFile_FileName();
+
+	/**
 	 * Returns the meta object for enum '{@link hu.bme.aut.oogen.OOBaseType <em>OO Base Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5149,6 +5227,32 @@ public interface OogenPackage extends EPackage {
 		 * @generated
 		 */
 		EReference OO_PRINT__PARAMETER = eINSTANCE.getOOPrint_Parameter();
+
+		/**
+		 * The meta object literal for the '{@link hu.bme.aut.oogen.OOWriteFileImpl <em>OO Write File</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.bme.aut.oogen.OOWriteFileImpl
+		 * @see hu.bme.aut.oogen.OogenPackageImpl#getOOWriteFile()
+		 * @generated
+		 */
+		EClass OO_WRITE_FILE = eINSTANCE.getOOWriteFile();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameter</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OO_WRITE_FILE__PARAMETER = eINSTANCE.getOOWriteFile_Parameter();
+
+		/**
+		 * The meta object literal for the '<em><b>File Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OO_WRITE_FILE__FILE_NAME = eINSTANCE.getOOWriteFile_FileName();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.aut.oogen.OOBaseType <em>OO Base Type</em>}' enum.

@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -400,6 +401,13 @@ public class OogenPackageImpl extends EPackageImpl implements OogenPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass ooWriteFileEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum ooBaseTypeEEnum = null;
 
 	/**
@@ -475,6 +483,9 @@ public class OogenPackageImpl extends EPackageImpl implements OogenPackage {
 		OogenPackageImpl theOogenPackage = (OogenPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof OogenPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new OogenPackageImpl());
 
 		isInited = true;
+
+		// Initialize simple dependencies
+		XMLTypePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theOogenPackage.createPackageContents();
@@ -1621,6 +1632,33 @@ public class OogenPackageImpl extends EPackageImpl implements OogenPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getOOWriteFile() {
+		return ooWriteFileEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOOWriteFile_Parameter() {
+		return (EReference)ooWriteFileEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getOOWriteFile_FileName() {
+		return (EAttribute)ooWriteFileEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getOOBaseType() {
 		return ooBaseTypeEEnum;
 	}
@@ -1868,6 +1906,10 @@ public class OogenPackageImpl extends EPackageImpl implements OogenPackage {
 		ooPrintEClass = createEClass(OO_PRINT);
 		createEReference(ooPrintEClass, OO_PRINT__PARAMETER);
 
+		ooWriteFileEClass = createEClass(OO_WRITE_FILE);
+		createEReference(ooWriteFileEClass, OO_WRITE_FILE__PARAMETER);
+		createEAttribute(ooWriteFileEClass, OO_WRITE_FILE__FILE_NAME);
+
 		// Create enums
 		ooBaseTypeEEnum = createEEnum(OO_BASE_TYPE);
 		ooVisibilityEEnum = createEEnum(OO_VISIBILITY);
@@ -1898,6 +1940,9 @@ public class OogenPackageImpl extends EPackageImpl implements OogenPackage {
 		setName(eNAME);
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
+
+		// Obtain other dependent packages
+		XMLTypePackage theXMLTypePackage = (XMLTypePackage)EPackage.Registry.INSTANCE.getEPackage(XMLTypePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1951,6 +1996,7 @@ public class OogenPackageImpl extends EPackageImpl implements OogenPackage {
 		ooBoolLiteralEClass.getESuperTypes().add(this.getOOExpression());
 		ooNewEClass.getESuperTypes().add(this.getOOExpression());
 		ooPrintEClass.getESuperTypes().add(this.getOOStatement());
+		ooWriteFileEClass.getESuperTypes().add(this.getOOStatement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(ooPackageEClass, OOPackage.class, "OOPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2131,6 +2177,10 @@ public class OogenPackageImpl extends EPackageImpl implements OogenPackage {
 
 		initEClass(ooPrintEClass, OOPrint.class, "OOPrint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOOPrint_Parameter(), this.getOOVariable(), null, "parameter", null, 0, -1, OOPrint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(ooWriteFileEClass, OOWriteFile.class, "OOWriteFile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getOOWriteFile_Parameter(), this.getOOVariable(), null, "parameter", null, 0, -1, OOWriteFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOOWriteFile_FileName(), theXMLTypePackage.getString(), "fileName", null, 0, 1, OOWriteFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(ooBaseTypeEEnum, OOBaseType.class, "OOBaseType");

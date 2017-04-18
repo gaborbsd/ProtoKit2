@@ -47,6 +47,7 @@ import hu.bme.aut.oogen.OOTypeCast
 import hu.bme.aut.oogen.OOBoolLiteral
 import hu.bme.aut.oogen.OONew
 import hu.bme.aut.oogen.OOPrint
+import hu.bme.aut.oogen.OOWriteFile
 
 class OOCodeGeneratorTemplatesJava implements OOCodeGeneratorTemplates {
 	
@@ -66,7 +67,9 @@ class OOCodeGeneratorTemplatesJava implements OOCodeGeneratorTemplates {
 	
 	import java.nio.ByteBuffer;
 	import java.util.*;
-	
+	import java.io.BufferedWriter;
+	import java.io.FileWriter;
+	import java.io.IOException;
 	import hu.bme.aut.protokit.runtime.ProtoUtil;
 	«ENDIF»
 	
@@ -243,6 +246,21 @@ public class «cl.name»  «generateInterfaceImplementation(cl)» {
 		System.out.println(«a.generateReference»);
 		«ENDFOR»
 	'''
+	
+		def dispatch String generateStatement(OOWriteFile w) 
+	'''try (BufferedWriter bw = new BufferedWriter(new FileWriter(«w.getFileName()»))) {
+			
+			«FOR a : w.parameter»
+			bw.write(«a.generateReference»);
+			«ENDFOR»
+
+			} catch (IOException e) {
+	
+				e.printStackTrace();
+	
+			}
+	'''
+	
 	
 	def dispatch String generateStatement(OOIf s) '''
 	«var List<OOIf> list = Collections.singletonList(s)»

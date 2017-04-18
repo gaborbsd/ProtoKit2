@@ -282,6 +282,10 @@ public class OogenAdapterFactory extends AdapterFactoryImpl {
 				return createOOPrintAdapter();
 			}
 			@Override
+			public Adapter caseOOWriteFile(OOWriteFile object) {
+				return createOOWriteFileAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -1054,6 +1058,20 @@ public class OogenAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createOOPrintAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.bme.aut.oogen.OOWriteFile <em>OO Write File</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.bme.aut.oogen.OOWriteFile
+	 * @generated
+	 */
+	public Adapter createOOWriteFileAdapter() {
 		return null;
 	}
 
